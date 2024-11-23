@@ -6,8 +6,7 @@ def task() -> float:
     with open("input.json", "r") as file:
         data = json.load(file)
     for dict_ in data:
-        p = dict_["score"] * dict_["weight"]
-        total += p
+        total += dict_["score"] * dict_["weight"]
     return total
 
 
