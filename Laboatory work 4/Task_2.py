@@ -7,12 +7,9 @@ OUTPUT_FILENAME = "output.json"
 
 def task() -> None:
     with open(INPUT_FILENAME, 'r') as in_file:
-        list_ = []
         lines = [line_ for line_ in csv.DictReader(in_file)]
-        for line_ in lines:
-            list_.append(line_)
-        with open(OUTPUT_FILENAME, 'w') as out_file:
-            json.dump(list_, out_file, indent=4, ensure_ascii=True)
+    with open(OUTPUT_FILENAME, 'w') as out_file:
+        json.dump(lines, out_file, indent=4)
 
 
 if __name__ == '__main__':
